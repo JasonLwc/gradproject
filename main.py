@@ -116,13 +116,13 @@ else:
     # session state
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = [
-            AIMessage(content="Hello, I am a bot. How can I help you?"),
+            AIMessage(content="Yo, whaz up. How can I help you today?"),
         ]
     if "vector_store" not in st.session_state:
         st.session_state.vector_store = get_vectorstore_from_url(website_url)    
 
     # user input
-    user_query = st.chat_input("Type your message here...")
+    user_query = st.chat_input("Tell me your wish here...")
     if user_query:
         response = get_response(user_query)
         st.session_state.chat_history.append(HumanMessage(content=user_query))
